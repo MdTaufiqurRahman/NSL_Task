@@ -4,8 +4,6 @@
 }
 .table_wrapper table tbody tr td {
   background: #fafafa;
-  /* border-top: 1px solid rgb(0, 0, 0) !important;
-  border-bottom: 1px solid rgb(0, 0, 0) !important; */
 }
 .table_wrapper table tr {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);

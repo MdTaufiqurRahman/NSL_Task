@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![Readme_Banner1](./src/assets/readme/Screenshot_1.png)
+![Readme_Banner1](./src/assets/Screenshot_4.png)
 ![Readme_Banner1](./src/assets/readme/Screenshot_2.png)
 ![Readme_Banner1](./src/assets/readme/Screenshot_3.png)
 
