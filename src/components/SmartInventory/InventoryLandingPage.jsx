@@ -7,7 +7,6 @@ import DeleteIcon from "../../assets/DeleteIcon.svg";
 import EditIcon from "../../assets/EditIcon.svg";
 import SearchIcon from "../../assets/SearchIcon.svg";
 import NSLButton from "../../common/components/Buttons/Button";
-import { useAxiosRequest } from "../../common/hooks/useAxiosRequest";
 import DeleteInventory from "./Create/DeleteInventory";
 import InventoryCreate from "./Create/InventoryCreate";
 import "./style.css";
@@ -20,8 +19,6 @@ export default function InventoryLandingPage() {
   const [categoryList, setCategoryList] = useState([]);
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const readProducts = useAxiosRequest([]);
-  const getCategoryNameWiseProductNames = useAxiosRequest([]);
 
   const headerData = [
     "SL",
@@ -36,30 +33,33 @@ export default function InventoryLandingPage() {
     "Action",
   ];
 
+  // Read all product
   const productLanding = () => {
-    readProducts?.apiAction({
-      urlObjKey: "readProducts",
-      method: "GET",
+    const config = {
       headers: {
         apiKey: APIKey,
       },
-      cb: (resData) => {
-        setProductList(resData);
-      },
-    });
+    };
+    axios
+      .get(`${BaseAPIUrl}products`, config)
+      .then((response) => {
+        setProductList(response?.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
   };
 
   // Category DDL
   const getCategory = () => {
-    getCategoryNameWiseProductNames?.apiAction({
-      urlObjKey: "getCategoryNameWiseProductNames",
-      headers: {
-        apiKey: APIKey,
-      },
-      cb: (resData) => {
-        setCategoryList(resData);
-      },
-    });
+    axios
+      .get(`${BaseAPIUrl}products/category-name-wise-product-names`)
+      .then((response) => {
+        setCategoryList(response.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
   };
 
   useEffect(() => {
