@@ -45,8 +45,6 @@ export default function InventoryCreate({
   const fileInputRef = useRef(null);
   const categories = categoryList;
 
-  console.log("purchasePrice:", purchasePrice);
-
   useEffect(() => {
     getCategory();
   }, []);
@@ -83,6 +81,7 @@ export default function InventoryCreate({
     }
   }, [editProductRow]);
 
+  // form validation
   const validateForm = () => {
     const errors = {};
     if (!selectedCategory) {
@@ -178,7 +177,6 @@ export default function InventoryCreate({
           selectedImage,
           `Image_${moment().format("DD-MM-YYYY HH:mm:ss")}.jpg`
         );
-
         try {
           const response = await axios({
             method: "post",
@@ -228,7 +226,7 @@ export default function InventoryCreate({
   };
 
   const saveHandler = (data) => {
-    console.log("data", data);
+    console.log(data);
   };
 
   const handleChange = () => {
@@ -258,6 +256,7 @@ export default function InventoryCreate({
       </option>
     ));
 
+  // Date selector code
   const months = [
     { id: 1, name: "Jan", days: 31 },
     { id: 2, name: "Feb", days: isLeapYear(year) ? 29 : 28 },
@@ -276,7 +275,6 @@ export default function InventoryCreate({
   function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
-  // Date selector code end
 
   // Image First and Last Three Characters Function
   function getFirstAndLastThreeCharacters(str) {
@@ -293,7 +291,7 @@ export default function InventoryCreate({
       <NSLModal
         isOpen={isModalOpen}
         onClose={closeModal}
-        title={editProductRow ? "Edit Product" : "Add New Product"}
+        title={editProductRow ? "Edit This Product" : "Add New Product"}
       >
         <form
           className="flex items-center justify-center flex-col"
@@ -337,7 +335,6 @@ export default function InventoryCreate({
               </label>
               <Required />{" "}
             </div>
-
             <div className="flex w-[350px] flex-col">
               <select
                 value={selectedProduct}
@@ -366,7 +363,6 @@ export default function InventoryCreate({
                 Serial Number
               </label>
             </div>
-
             <div className="flex w-[350px]">
               <input
                 type="text"
@@ -512,7 +508,6 @@ export default function InventoryCreate({
                 onChange={handleChange}
                 className="form-checkbox h-4 text-indigo-600 transition duration-150 ease-in-out mt-[2px]"
               />
-
               <label className="ml-2 text-sm font-normal">
                 {"Has Warranty"}
               </label>

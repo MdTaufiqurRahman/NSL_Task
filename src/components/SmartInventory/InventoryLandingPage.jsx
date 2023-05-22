@@ -18,7 +18,7 @@ export default function InventoryLandingPage() {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
   const [categoryList, setCategoryList] = useState([]);
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const readProducts = useAxiosRequest([]);
   const getCategoryNameWiseProductNames = useAxiosRequest([]);
@@ -36,7 +36,6 @@ export default function InventoryLandingPage() {
     "Action",
   ];
 
-  // Landing Api
   const productLanding = () => {
     readProducts?.apiAction({
       urlObjKey: "readProducts",
@@ -94,6 +93,7 @@ export default function InventoryLandingPage() {
     openModal();
   };
 
+  // Edit handler
   const editHandler = (id) => {
     const fetchData = async () => {
       try {
@@ -158,7 +158,7 @@ export default function InventoryLandingPage() {
                           <th
                             key={index}
                             scope="col"
-                            className="px-6 py-3 text-xs font-bold text-center"
+                            className="px-6 py-3 text-xs font-bold text-center "
                           >
                             {item}
                           </th>
@@ -233,7 +233,6 @@ export default function InventoryLandingPage() {
           </div>
         </div>
       </div>
-
       {/* Create Modal */}
       <InventoryCreate
         isModalOpen={isModalOpen}
