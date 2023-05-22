@@ -28,14 +28,14 @@ export default function InventoryCreate({
   const [selectedProduct, setSelectedProduct] = useState("");
   const [imageError, setImageError] = useState(false);
   const [purchaseDate, setPurchaseDate] = useState({
-    day: moment().format("D"),
-    month: moment().format("M"),
-    year: moment().format("YYYY"),
+    day: moment()?.format("D"),
+    month: moment()?.format("M"),
+    year: moment()?.format("YYYY"),
   });
   const [warrantyDate, setWarrantDate] = useState({
-    warrantyDay: moment().format("D"),
-    warrantyMonth: moment().format("M"),
-    warrantyYear: moment().format("YYYY"),
+    warrantyDay: moment()?.format("D"),
+    warrantyMonth: moment()?.format("M"),
+    warrantyYear: moment()?.format("YYYY"),
   });
   const [month, setMonth] = useState("jun");
   const [year, setYear] = useState();
@@ -57,19 +57,21 @@ export default function InventoryCreate({
       setSerialNumber(editProductRow?.serialNumber);
       setSelectedCategory(editProductRow?.categoryName);
       setSelectedProduct(editProductRow?.productName);
-      setDay(moment(editProductRow?.warrantyExpireDate).format("D"));
-      setYear(moment(editProductRow?.warrantyExpireDate).format("YYYY"));
+      setDay(moment(editProductRow?.warrantyExpireDate)?.format("D"));
+      setYear(moment(editProductRow?.warrantyExpireDate)?.format("YYYY"));
       setPurchaseDate({
-        day: moment(editProductRow?.purchaseDate).format("D"),
-        month: moment(editProductRow?.purchaseDate).format("M"),
-        year: moment(editProductRow?.purchaseDate).format("YYYY"),
+        day: moment(editProductRow?.purchaseDate)?.format("D"),
+        month: moment(editProductRow?.purchaseDate)?.format("M"),
+        year: moment(editProductRow?.purchaseDate)?.format("YYYY"),
       });
       if (editProductRow?.warrantyInYears) {
         setChecked(true);
         setWarrantDate({
-          warrantyDay: moment(editProductRow?.warrantyExpireDate).format("D"),
-          warrantyMonth: moment(editProductRow?.warrantyExpireDate).format("M"),
-          warrantyYear: moment(editProductRow?.warrantyExpireDate).format(
+          warrantyDay: moment(editProductRow?.warrantyExpireDate)?.format("D"),
+          warrantyMonth: moment(editProductRow?.warrantyExpireDate)?.format(
+            "M"
+          ),
+          warrantyYear: moment(editProductRow?.warrantyExpireDate)?.format(
             "YYYY"
           ),
         });
@@ -154,6 +156,33 @@ export default function InventoryCreate({
             console.log("error", error);
             toast.error("Error Editing product.");
           });
+
+        const ImageURL = `${BaseAPIUrl}products/${
+          editProductRow && editProductRow?.id
+        }/upload-product-photo`;
+
+        const formData = new FormData();
+        formData.append(
+          "productPhoto",
+          selectedImage,
+          `Image_${moment()?.format("DD-MM-YYYY HH:mm:ss")}.jpg`
+        );
+        const config = {
+          headers: {
+            apiKey: APIKey,
+            "Content-Type": "multipart/form-data",
+          },
+        };
+        axios
+          .put(ImageURL, formData, config)
+          .then((response) => {
+            console.log(response.data);
+            closeModal();
+            productLanding();
+          })
+          .catch((error) => {
+            console.log("error", error);
+          });
       } else {
         const product = {
           categoryName: selectedCategory,
@@ -175,7 +204,7 @@ export default function InventoryCreate({
         data.append(
           "productPhoto",
           selectedImage,
-          `Image_${moment().format("DD-MM-YYYY HH:mm:ss")}.jpg`
+          `Image_${moment()?.format("DD-MM-YYYY HH:mm:ss")}.jpg`
         );
         try {
           const response = await axios({
@@ -214,14 +243,14 @@ export default function InventoryCreate({
     setSelectedImage(null);
     setProduct(null);
     setPurchaseDate({
-      day: moment().format("D"),
-      month: moment().format("M"),
-      year: moment().format("YYYY"),
+      day: moment()?.format("D"),
+      month: moment()?.format("M"),
+      year: moment()?.format("YYYY"),
     });
     setWarrantDate({
-      warrantyDay: moment().format("D"),
-      warrantyMonth: moment().format("M"),
-      warrantyYear: moment().format("YYYY"),
+      warrantyDay: moment()?.format("D"),
+      warrantyMonth: moment()?.format("M"),
+      warrantyYear: moment()?.format("YYYY"),
     });
   };
 
