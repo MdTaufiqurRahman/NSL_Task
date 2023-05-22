@@ -4,7 +4,7 @@ import "./App.css";
 import Main from "./components/Main/Main";
 
 export const BaseAPIUrl = "http://182.163.101.173:49029/product-crud/";
-export const APIKey = "ABAd/fIIrrYfdoXQ1SQgYCkh18CDiOSMjPYsJ3tJdDQ=";
+export const APIKey = "qAYHLhNg6YUF34HOV3XuKJBC2tNyiL3DuB2yzKzIqMM=";
 
 function App() {
   return (
