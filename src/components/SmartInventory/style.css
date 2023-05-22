@@ -27,3 +27,15 @@
     display: none;
   }
 }
+@media (max-width: 531px) {
+  .left-part {
+    width: 115px !important;
+    margin-right: 2px !important;
+  }
+  .right-part {
+    width: 255px !important;
+  }
+  .footer-part {
+    padding-right: 1px !important;
+  }
+}

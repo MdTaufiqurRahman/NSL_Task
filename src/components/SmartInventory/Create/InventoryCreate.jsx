@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useRef, useState } from "react";
@@ -37,8 +38,10 @@ export default function InventoryCreate({
     warrantyMonth: moment()?.format("M"),
     warrantyYear: moment()?.format("YYYY"),
   });
+  // eslint-disable-next-line no-unused-vars
   const [month, setMonth] = useState("jun");
   const [year, setYear] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [day, setDay] = useState("");
   const [previewImage, setPreviewImage] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -47,6 +50,7 @@ export default function InventoryCreate({
 
   useEffect(() => {
     getCategory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //  when edit button is clicked, the current row data is set to the state
@@ -327,7 +331,7 @@ export default function InventoryCreate({
           onSubmit={handleSubmit}
         >
           <div className="mb-4 flex">
-            <div className="w-[120px] text-end mr-[17px]">
+            <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="category"
                 className="inline-block mr-1 font-normal text-sm text-[#4F4F4F]"
@@ -336,11 +340,11 @@ export default function InventoryCreate({
               </label>
               <Required />
             </div>
-            <div className="flex w-[350px] flex-col">
+            <div className="right-part flex w-[350px] flex-col">
               <select
                 value={selectedCategory}
                 onChange={handleCategoryChange}
-                className="block w-full p-2 border border-gray-300 rounded-md"
+                className="block w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 rounded-md"
               >
                 <option value="">Select Category</option>
                 {categoryOptions}
@@ -355,7 +359,7 @@ export default function InventoryCreate({
             </div>
           </div>
           <div className="mb-4 flex ">
-            <div className="w-[120px] text-end mr-[17px]">
+            <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="productName"
                 className="inline-block mr-1 font-normal text-sm text-[#4F4F4F]"
@@ -364,11 +368,11 @@ export default function InventoryCreate({
               </label>
               <Required />{" "}
             </div>
-            <div className="flex w-[350px] flex-col">
+            <div className="right-part flex w-[350px] flex-col">
               <select
                 value={selectedProduct}
                 onChange={handleProductChange}
-                className="block w-full p-2 border border-gray-300 rounded-md"
+                className="block w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 rounded-md"
                 disabled={!selectedCategory}
               >
                 <option value="">Select Product</option>
@@ -384,7 +388,7 @@ export default function InventoryCreate({
             </div>
           </div>
           <div className="mb-4 flex">
-            <div className="w-[120px] text-end mr-[17px]">
+            <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="serialNumber"
                 className="inline-block mr-1 font-normal text-sm text-[#4F4F4F]"
@@ -392,11 +396,11 @@ export default function InventoryCreate({
                 Serial Number
               </label>
             </div>
-            <div className="flex w-[350px]">
+            <div className="right-part flex w-[350px]">
               <input
                 type="text"
                 id="serialNumber"
-                className={`w-full px-3 py-2 border ${
+                className={`w-full px-[22px] py-[7px] border text-[13px] font-[400] text-[#333333] ${
                   errors.serialNumber ? "border-red-500" : "border-gray-300"
                 } rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
                 value={serialNumber}
@@ -406,7 +410,7 @@ export default function InventoryCreate({
             </div>
           </div>
           <div className="mb-4 flex">
-            <div className="w-[120px] text-end mr-[17px]">
+            <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="purchasePrice"
                 className="inline-block mr-1 font-normal text-sm text-[#4F4F4F]"
@@ -415,11 +419,11 @@ export default function InventoryCreate({
               </label>
               <Required />
             </div>
-            <div className="flex w-[350px] flex-col">
+            <div className="right-part flex w-[350px] flex-col">
               <input
                 type="number"
                 id="purchasePrice"
-                className={`w-full px-3 py-2 border ${
+                className={`w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border ${
                   errors.purchasePrice ? "border-red-500" : "border-gray-300"
                 } rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
                 value={purchasePrice}
@@ -436,7 +440,7 @@ export default function InventoryCreate({
             </div>
           </div>
           <div className="mb-4 flex">
-            <div className="w-[120px] text-end mr-[17px]">
+            <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="Purchase-date"
                 className="mr-1 text-sm text-[#4F4F4F]"
@@ -444,7 +448,7 @@ export default function InventoryCreate({
                 Purchase Date <Required />
               </label>
             </div>
-            <div className="w-[350px] flex">
+            <div className="right-part w-[350px] flex">
               <div className="w-[32%] mr-[2%]">
                 <label htmlFor="day" className="sr-only">
                   Day
@@ -529,8 +533,8 @@ export default function InventoryCreate({
             </div>
           </div>
           <div className="mb-4 flex">
-            <div className="w-[120px] mr-[17px]"></div>
-            <div className="w-[350px] flex">
+            <div className="left-part w-[120px] mr-[17px]"></div>
+            <div className="right-part w-[350px] flex">
               <input
                 type="checkbox"
                 checked={checked}
@@ -545,7 +549,7 @@ export default function InventoryCreate({
           {checked ? (
             <>
               <div className="mb-4 flex">
-                <div className="w-[120px] text-end mr-[17px]">
+                <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty"
                     className="inline-block mr-1 font-normal text-sm text-[#4F4F4F]"
@@ -554,7 +558,7 @@ export default function InventoryCreate({
                   </label>
                   <Required />
                 </div>
-                <div className="flex w-[350px] flex-col">
+                <div className="right-part flex w-[350px] flex-col">
                   <select
                     id="warranty"
                     className={`w-full px-3 py-2 border ${
@@ -583,7 +587,7 @@ export default function InventoryCreate({
                 </div>
               </div>
               <div className="mb-4 flex">
-                <div className="w-[120px] text-end mr-[17px]">
+                <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty-date"
                     className="mr-1 text-sm text-[#4F4F4F]"
@@ -591,7 +595,7 @@ export default function InventoryCreate({
                     Warranty Expire Date <Required />
                   </label>
                 </div>
-                <div className="w-[350px] flex">
+                <div className="right-part w-[350px] flex">
                   <div className="w-[32%] mr-[2%]">
                     <label htmlFor="warrantyDay" className="sr-only">
                       Day
@@ -673,8 +677,8 @@ export default function InventoryCreate({
           ) : null}
 
           <div className="mb-4 flex">
-            <div className="w-[120px] mr-[17px]"></div>
-            <div className="flex w-[350px] justify-between">
+            <div className="left-part w-[120px] mr-[17px]"></div>
+            <div className="right-part flex w-[350px] justify-between">
               <div>
                 <button
                   type="button"
@@ -732,7 +736,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mt-7 w-full flex justify-end pr-7 mb-[12px]">
+          <div className="footer-part mt-7 w-full flex justify-end pr-7 mb-[12px]">
             <button
               type="button"
               className="flex align-middle gap-1 text-[#0F75BC] font-semibold text-sm"
@@ -741,7 +745,7 @@ export default function InventoryCreate({
               <span>Add more Product</span>
             </button>
           </div>
-          <div className="flex w-full justify-end my-[35px] pr-7">
+          <div className="footer-part flex w-full justify-end my-[35px] pr-7">
             <NSLButton onClick={closeModal} type={"cancel"} className={"mr-2"}>
               Cancel
             </NSLButton>

@@ -36,14 +36,12 @@ const NSLModal = ({ isOpen, onClose, children, title }) => {
                     alt=""
                     className="w-[73px] bg-[#EB57571A] border rounded-full p-2 mx-auto"
                   />
-                  <div className="text-center mt-4 font-semibold text-base">
+                  <div className="text-center mt-[17px] font-semibold text-[16px] px-4">
                     Are you sure you want to delete this Product ?
                   </div>
                 </div>
               )}
-              <div className="bg-[#F7F7FA] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                {children}
-              </div>
+              <div className="bg-[#F7F7FA]">{children}</div>
             </div>
           </div>
         </div>
