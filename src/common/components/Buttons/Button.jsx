@@ -12,7 +12,7 @@ const NSLButton = ({ onClick, className, children, type }) => {
       )}
       {type === "submit" && (
         <button
-          className={` bg-customSaveColor text-[#FFFFFF] text-sm font-semibold py-[10.5px] px-5 ${className}`}
+          className={` bg-customSaveColor text-[#FFFFFF] text-[14px] font-semibold py-[10.5px] px-[20px] ${className}`}
           onClick={onClick}
         >
           {children}
@@ -28,7 +28,7 @@ const NSLButton = ({ onClick, className, children, type }) => {
       )}
       {type === "cancel" && (
         <button
-          className={` text-red-600 text-sm font-semibold border  border-customDeleteColor py-[9.5px] px-4 ${className} `}
+          className={` text-[#EB5757] text-[14px] font-semibold border  border-customDeleteColor py-[9.5px] px-[20px] ${className} `}
           onClick={onClick}
         >
           {children}

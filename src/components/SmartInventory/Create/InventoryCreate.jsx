@@ -586,7 +586,7 @@ export default function InventoryCreate({
                   </div>
                 </div>
               </div>
-              <div className="mb-[16px] flex">
+              <div className="flex">
                 <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty-date"
@@ -676,13 +676,13 @@ export default function InventoryCreate({
             </>
           ) : null}
 
-          <div className="mb-[16px] flex">
+          <div className="flex">
             <div className="left-part w-[120px] mr-[17px]"></div>
             <div className="right-part flex w-[350px] justify-between">
               <div>
                 <button
                   type="button"
-                  className="flex mt-[37px] h-[42px] items-center gap-2 w-[149px] pl-3 py-2 text-[#333333] bg-white border border-[#BDBDBD] rounded"
+                  className="flex mt-[56px] h-[42px] items-center gap-2 w-[149px] pl-3 py-2 text-[#333333] bg-white border border-[#BDBDBD] rounded-[4px]"
                   onClick={handleButtonClick}
                 >
                   <img
@@ -705,7 +705,7 @@ export default function InventoryCreate({
                 </div>
                 <div>
                   {selectedImage && (
-                    <p className="text-[14px] text-[#0F75BC] font-semibold flex mt-[8px]">
+                    <p className="text-[14px] text-[#0F75BC] font-semibold flex mt-[12px]">
                       {getFirstAndLastThreeCharacters(
                         selectedImage?.name || selectedImage
                       )}
@@ -736,7 +736,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="footer-part mt-7 w-full flex justify-end pr-7 mb-[12px]">
+          <div className="footer-part mt-[32px] w-full flex justify-end pr-[42px]">
             <button
               type="button"
               className="flex align-middle gap-1 text-[#0F75BC] font-semibold text-sm"
@@ -745,8 +745,8 @@ export default function InventoryCreate({
               <span>Add more Product</span>
             </button>
           </div>
-          <div className="footer-part flex w-full justify-end my-[35px] pr-7">
-            <NSLButton onClick={closeModal} type={"cancel"} className={"mr-2"}>
+          <div className="footer-part flex w-full justify-end mt-[47px] mb-[35px] pr-[42px]">
+            <NSLButton onClick={closeModal} type={"cancel"} className={"mr-[11px]"}>
               Cancel
             </NSLButton>
             <NSLButton onClick={saveHandler} type={"submit"}>
