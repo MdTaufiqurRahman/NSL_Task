@@ -130,7 +130,7 @@ export default function InventoryLandingPage() {
               <input
                 type="text"
                 placeholder="Search here"
-                className="w-[285px] h-[42px] pl-[21px] pr-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-[285px] h-[42px] pl-[21px] pr-4 py-[11px] border text-[16px] font-[400] border-gray-300 rounded-[4px] shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
               <img
                 src={SearchIcon}
@@ -155,7 +155,7 @@ export default function InventoryLandingPage() {
                           <th
                             key={index}
                             scope="col"
-                            className="px-6 py-3 text-xs font-bold text-center "
+                            className="px-5 py-[10px] text-[14px] text-[#333333] font-bold text-center "
                           >
                             {item}
                           </th>
@@ -166,16 +166,16 @@ export default function InventoryLandingPage() {
                   <tbody className="divide-y divide-gray-200">
                     {productList?.map((item, index) => (
                       <tr key={index}>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {index + 1}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.assetNumber}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.categoryName}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item.productPhoto ? (
                             <img
                               className="w-[29px] h-[29px] rounded-full text-center"
@@ -184,24 +184,24 @@ export default function InventoryLandingPage() {
                             />
                           ) : null}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.productName}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.serialNumber}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.purchasePrice}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item?.warrantyInYears
                             ? item?.warrantyInYears + " Year"
                             : "N/A"}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal text-center">
+                        <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {moment(item?.purchaseDate)?.format("DD MMM,YYYY")}
                         </td>
-                        <td className="px-6 py-4 text-[14px] font-normal">
+                        <td className="px-5 py-[15px] text-[14px] font-normal">
                           <div className="flex justify-center">
                             <img
                               className="icon-image cursor-pointer mr-2 p-[5px] w-[22px] bg-[#F6E7EA]"
