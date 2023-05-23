@@ -330,7 +330,7 @@ export default function InventoryCreate({
           className="flex items-center justify-center flex-col"
           onSubmit={handleSubmit}
         >
-          <div className="mb-4 flex">
+          <div className="mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="category"
@@ -358,7 +358,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-4 flex ">
+          <div className="mb-[16px] flex ">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="productName"
@@ -387,7 +387,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-4 flex">
+          <div className="mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="serialNumber"
@@ -409,7 +409,7 @@ export default function InventoryCreate({
               />
             </div>
           </div>
-          <div className="mb-4 flex">
+          <div className="mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="purchasePrice"
@@ -439,7 +439,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-4 flex">
+          <div className="mb-[21px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="Purchase-date"
@@ -532,7 +532,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-4 flex">
+          <div className="mb-[9px] flex">
             <div className="left-part w-[120px] mr-[17px]"></div>
             <div className="right-part w-[350px] flex">
               <input
@@ -548,7 +548,7 @@ export default function InventoryCreate({
           </div>
           {checked ? (
             <>
-              <div className="mb-4 flex">
+              <div className="mb-[16px] flex">
                 <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty"
@@ -586,7 +586,7 @@ export default function InventoryCreate({
                   </div>
                 </div>
               </div>
-              <div className="mb-4 flex">
+              <div className="mb-[16px] flex">
                 <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty-date"
@@ -676,7 +676,7 @@ export default function InventoryCreate({
             </>
           ) : null}
 
-          <div className="mb-4 flex">
+          <div className="mb-[16px] flex">
             <div className="left-part w-[120px] mr-[17px]"></div>
             <div className="right-part flex w-[350px] justify-between">
               <div>

@@ -1,5 +1,6 @@
-import Delete from "../../../assets/trash.svg";
+/* eslint-disable react/prop-types */
 import CrossIcon from "../../../assets/CrossIcon.svg";
+import Delete from "../../../assets/trash.svg";
 
 const NSLModal = ({ isOpen, onClose, children, title }) => {
   const closeModal = () => {
@@ -20,7 +21,7 @@ const NSLModal = ({ isOpen, onClose, children, title }) => {
               {title ? (
                 <div className="flex justify-between px-4">
                   <div></div>
-                  <div className="font-semibold text-xl mt-[17px] mb-[29px]">
+                  <div className="font-semibold text-[20px] mt-[17px] mb-[29px] text-[#333333]">
                     {title}
                   </div>
                   <button
