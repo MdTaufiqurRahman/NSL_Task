@@ -18,9 +18,11 @@ const NSLModal = ({ isOpen, onClose, children, title }) => {
             &#8203;
             <div className="inline-block align-bottom bg-[#F7F7FA] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-[582px] sm:w-full">
               {title ? (
-                <div className="flex justify-between px-4 py-2">
+                <div className="flex justify-between px-4">
                   <div></div>
-                  <div className="font-semibold text-xl mt-2">{title}</div>
+                  <div className="font-semibold text-xl mt-[17px] mb-[29px]">
+                    {title}
+                  </div>
                   <button
                     onClick={closeModal}
                     type="button"
