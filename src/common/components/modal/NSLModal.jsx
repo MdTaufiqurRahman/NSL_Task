@@ -19,7 +19,7 @@ const NSLModal = ({ isOpen, onClose, children, title }) => {
             &#8203;
             <div className="inline-block align-bottom bg-[#F7F7FA] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-[582px] sm:w-full">
               {title ? (
-                <div className="flex justify-between px-4">
+                <div className="flex justify-between">
                   <div></div>
                   <div className="font-semibold text-[20px] mt-[17px] mb-[29px] text-[#333333]">
                     {title}
@@ -27,9 +27,9 @@ const NSLModal = ({ isOpen, onClose, children, title }) => {
                   <button
                     onClick={closeModal}
                     type="button"
-                    className="inline-flex p-2 rounded-md text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+                    className="inline-flex rounded-md text-[#4F4F4F]"
                   >
-                    <img className="mt-1" src={CrossIcon} alt="cross" />
+                    <img className="mt-[16px] mr-[26px]" src={CrossIcon} alt="cross" />
                   </button>
                 </div>
               ) : (

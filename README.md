@@ -30,7 +30,8 @@ or yarn
 
 ![Readme_Banner1](./src/assets/Screenshot_4.png)
 ![Readme_Banner1](./src/assets/Screenshot_delete.png)
-![Readme_Banner1](./src/assets/readme/Screenshot_3.png)
+![Readme_Banner1](./src/assets/Screenshot_1.png)
+![Readme_Banner1](./src/assets/Screenshot_2.png)
 
 ### Tech 🚀🚀
 
