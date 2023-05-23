@@ -344,7 +344,7 @@ export default function InventoryCreate({
               <select
                 value={selectedCategory}
                 onChange={handleCategoryChange}
-                className="block w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 rounded-md"
+                className="block w-full px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300"
               >
                 <option value="">Select Category</option>
                 {categoryOptions}
@@ -372,7 +372,7 @@ export default function InventoryCreate({
               <select
                 value={selectedProduct}
                 onChange={handleProductChange}
-                className="block w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 rounded-md"
+                className="block w-full px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300"
                 disabled={!selectedCategory}
               >
                 <option value="">Select Product</option>
@@ -400,9 +400,9 @@ export default function InventoryCreate({
               <input
                 type="text"
                 id="serialNumber"
-                className={`w-full px-[22px] py-[7px] border text-[13px] font-[400] text-[#333333] ${
+                className={`w-full px-[12px] py-[7px] border text-[13px] font-[400] text-[#333333] ${
                   errors.serialNumber ? "border-red-500" : "border-gray-300"
-                } rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
+                } focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
                 value={serialNumber}
                 placeholder="Enter Serial Number"
                 onChange={(e) => setSerialNumber(e.target.value)}
@@ -423,9 +423,9 @@ export default function InventoryCreate({
               <input
                 type="number"
                 id="purchasePrice"
-                className={`w-full px-[22px] py-[7px] text-[13px] font-[400] text-[#333333] border ${
+                className={`w-full px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border ${
                   errors.purchasePrice ? "border-red-500" : "border-gray-300"
-                } rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
+                } focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
                 value={purchasePrice}
                 placeholder="Enter Purchase Price"
                 onChange={(e) => setPurchasePrice(e.target.value)}
@@ -456,7 +456,7 @@ export default function InventoryCreate({
                 <select
                   id="day"
                   name="day"
-                  className="px-3 py-1 border border-gray-300 rounded-md w-full"
+                  className="px-[9px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                   value={purchaseDate?.day}
                   onChange={(e) => {
                     const getPurchaseDate = { ...purchaseDate };
@@ -487,7 +487,7 @@ export default function InventoryCreate({
                   id="month"
                   name="month"
                   value={purchaseDate.month}
-                  className="px-2 py-1 border border-gray-300 rounded-md w-full"
+                  className="px-[14px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                   onChange={(e) => {
                     const getPurchaseDate = { ...purchaseDate };
                     const getWarrantyDate = { ...warrantyDate };
@@ -512,7 +512,7 @@ export default function InventoryCreate({
                   value={purchaseDate.year}
                   id="year"
                   name="year"
-                  className="px-3 py-1 border border-gray-300 rounded-md w-full"
+                  className="px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                   onChange={(e) => {
                     const getPurchaseDate = { ...purchaseDate };
                     setWarrantDate({
@@ -541,7 +541,7 @@ export default function InventoryCreate({
                 onChange={handleChange}
                 className="form-checkbox h-4 text-indigo-600 transition duration-150 ease-in-out mt-[2px]"
               />
-              <label className="ml-2 text-sm font-normal">
+              <label className="ml-[5px] text-[14px] font-[400]">
                 {"Has Warranty"}
               </label>
             </div>
@@ -561,9 +561,9 @@ export default function InventoryCreate({
                 <div className="right-part flex w-[350px] flex-col">
                   <select
                     id="warranty"
-                    className={`w-full px-3 py-2 border ${
+                    className={`w-full px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border ${
                       errors.warranty ? "border-red-500" : "border-gray-300"
-                    } rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
+                    } focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
                     value={warranty}
                     onChange={(e) => {
                       setWarranty(e.target.value);
@@ -604,7 +604,7 @@ export default function InventoryCreate({
                       id="warrantyDay"
                       disabled={true}
                       name="warrantyDay"
-                      className="px-3 py-1 border border-gray-300 rounded-md w-full"
+                      className="px-[9px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                       value={warrantyDate?.warrantyDay}
                       onChange={(e) => {
                         const getWarrantyDate = { ...warrantyDate };
@@ -633,7 +633,7 @@ export default function InventoryCreate({
                       id="warrantyMonth"
                       disabled={true}
                       name="warrantyMonth"
-                      className="px-2 py-1 border border-gray-300 rounded-md w-full"
+                      className="px-[14px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                       value={warrantyDate?.warrantyMonth}
                       onChange={(e) => {
                         const getWarrantyDate = { ...warrantyDate };
@@ -656,7 +656,7 @@ export default function InventoryCreate({
                       disabled={true}
                       id="warrantyYear"
                       name="warrantyYear"
-                      className="px-3 py-1 border border-gray-300 rounded-md w-full"
+                      className="px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border border-gray-300 w-full"
                       value={warrantyDate?.warrantyYear}
                       onChange={(e) => {
                         const getWarrantyDate = { ...warrantyDate };
