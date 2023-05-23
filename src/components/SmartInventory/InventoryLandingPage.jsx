@@ -104,7 +104,6 @@ export default function InventoryLandingPage() {
         setProduct(response?.data);
         setIsModalOpen(true);
       } catch (error) {
-        console.error("Error fetching product:", error);
         toast.warning("Error fetching product!", error?.message);
       }
     };

@@ -106,7 +106,7 @@ export default function InventoryCreate({
       setImageError(true);
     }
     setErrors(errors);
-    return Object.keys(errors).length === 0;
+    return Object.keys(errors)?.length === 0;
   };
 
   const handleButtonClick = () => {
@@ -150,14 +150,12 @@ export default function InventoryCreate({
         };
         axios
           .put(url, editData, { headers })
-          .then((response) => {
-            console.log(response.data);
+          .then(() => {
             toast.success("Product Edited successfully!");
             closeModal();
             productLanding();
           })
-          .catch((error) => {
-            console.log("error", error);
+          .catch(() => {
             toast.error("Error Editing product.");
           });
 
@@ -179,8 +177,7 @@ export default function InventoryCreate({
         };
         axios
           .put(ImageURL, formData, config)
-          .then((response) => {
-            console.log(response.data);
+          .then(() => {
             closeModal();
             productLanding();
           })
@@ -211,7 +208,7 @@ export default function InventoryCreate({
           `Image_${moment()?.format("DD-MM-YYYY HH:mm:ss")}.jpg`
         );
         try {
-          const response = await axios({
+          await axios({
             method: "post",
             url: `${BaseAPIUrl}products`,
             headers: {
@@ -221,12 +218,10 @@ export default function InventoryCreate({
             data: data,
             // redirect: "follow",
           });
-          console.log(response, "response");
           toast.success("Product added successfully!");
           closeModal();
           productLanding();
         } catch (error) {
-          console.log("error ", error);
           toast.error("Error adding product.");
         }
       }
@@ -256,10 +251,6 @@ export default function InventoryCreate({
       warrantyMonth: moment()?.format("M"),
       warrantyYear: moment()?.format("YYYY"),
     });
-  };
-
-  const saveHandler = (data) => {
-    console.log(data);
   };
 
   const handleChange = () => {
@@ -423,6 +414,7 @@ export default function InventoryCreate({
               <input
                 type="number"
                 id="purchasePrice"
+                min={0}
                 className={`w-full px-[12px] py-[7px] text-[13px] font-[400] text-[#333333] border ${
                   errors.purchasePrice ? "border-red-500" : "border-gray-300"
                 } focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
@@ -746,12 +738,14 @@ export default function InventoryCreate({
             </button>
           </div>
           <div className="footer-part flex w-full justify-end mt-[47px] mb-[35px] pr-[42px]">
-            <NSLButton onClick={closeModal} type={"cancel"} className={"mr-[11px]"}>
+            <NSLButton
+              onClick={closeModal}
+              type={"cancel"}
+              className={"mr-[11px]"}
+            >
               Cancel
             </NSLButton>
-            <NSLButton onClick={saveHandler} type={"submit"}>
-              Save
-            </NSLButton>
+            <NSLButton type={"submit"}>Save</NSLButton>
           </div>
         </form>
       </NSLModal>
