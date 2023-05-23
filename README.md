@@ -3,7 +3,7 @@
 ## Screenshots
 
 ![Readme_Banner1](./src/assets/Screenshot_4.png)
-![Readme_Banner1](./src/assets/readme/Screenshot_2.png)
+![Readme_Banner1](./src/assets/Screenshot_delete.png)
 ![Readme_Banner1](./src/assets/readme/Screenshot_3.png)
 
 ### Installation 💻
