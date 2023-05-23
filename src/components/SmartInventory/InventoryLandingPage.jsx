@@ -18,7 +18,6 @@ export default function InventoryLandingPage() {
   const [selectedProduct, setSelectedProduct] = useState({});
   const [categoryList, setCategoryList] = useState([]);
   const [product, setProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const headerData = [
     "SL",
@@ -107,8 +106,6 @@ export default function InventoryLandingPage() {
       } catch (error) {
         console.error("Error fetching product:", error);
         toast.warning("Error fetching product!", error?.message);
-      } finally {
-        setIsLoading(false);
       }
     };
     if (id) {
