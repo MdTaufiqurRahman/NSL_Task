@@ -36,6 +36,12 @@
     width: 255px !important;
   }
   .footer-part {
-    padding-right: 1px !important;
+    padding-right: 14px !important;
+  }
+}
+@media (max-width: 640px) {
+  .responsive-modal {
+    padding-left: 6px;
+    padding-right: 14px;
   }
 }

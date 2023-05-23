@@ -320,7 +320,7 @@ export default function InventoryCreate({
           className="flex items-center justify-center flex-col"
           onSubmit={handleSubmit}
         >
-          <div className="mb-[16px] flex">
+          <div className="responsive-modal mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="category"
@@ -348,7 +348,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-[16px] flex ">
+          <div className="responsive-modal mb-[16px] flex ">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="productName"
@@ -377,7 +377,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-[16px] flex">
+          <div className="responsive-modal mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="serialNumber"
@@ -399,7 +399,7 @@ export default function InventoryCreate({
               />
             </div>
           </div>
-          <div className="mb-[16px] flex">
+          <div className="responsive-modal mb-[16px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="purchasePrice"
@@ -430,7 +430,7 @@ export default function InventoryCreate({
               </div>
             </div>
           </div>
-          <div className="mb-[21px] flex">
+          <div className="responsive-modal mb-[21px] flex">
             <div className="left-part w-[120px] text-end mr-[17px]">
               <label
                 htmlFor="Purchase-date"
@@ -539,7 +539,7 @@ export default function InventoryCreate({
           </div>
           {checked ? (
             <>
-              <div className="mb-[16px] flex">
+              <div className="responsive-modal mb-[16px] flex">
                 <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty"
@@ -577,7 +577,7 @@ export default function InventoryCreate({
                   </div>
                 </div>
               </div>
-              <div className="flex">
+              <div className="responsive-modal flex">
                 <div className="left-part w-[120px] text-end mr-[17px]">
                   <label
                     htmlFor="warranty-date"

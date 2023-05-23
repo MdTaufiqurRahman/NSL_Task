@@ -29,9 +29,10 @@ or yarn
 ## Screenshots
 
 ![Readme_Banner1](./src/assets/Screenshot_4.png)
-![Readme_Banner1](./src/assets/Screenshot_delete.png)
-![Readme_Banner1](./src/assets/Screenshot_1.png)
-![Readme_Banner1](./src/assets/Screenshot_2.png)
+![Readme_Banner2](./src/assets/Screenshot_delete.png)
+![Readme_Banner3](./src/assets/Screenshot_1.png)
+![Readme_Banner4](./src/assets/Screenshot_2.png)
+![Readme_Banner5](./src/assets/Edit.png)
 
 ### Tech 🚀🚀
 
