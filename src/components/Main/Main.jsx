@@ -9,7 +9,7 @@ export default function Main() {
       <div
         className=""
         style={{
-          minHeight: "calc(100vh - 135px)",
+          minHeight: "calc(100vh - 115px)",
         }}
       >
         <div className="mx-auto max-w-full pl-[25px] pr-[25px]">
