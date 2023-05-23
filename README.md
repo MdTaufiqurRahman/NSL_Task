@@ -1,11 +1,4 @@
 # <p  align="center">NSL-Task 🚀🚀</p>
-
-## Screenshots
-
-![Readme_Banner1](./src/assets/Screenshot_4.png)
-![Readme_Banner1](./src/assets/Screenshot_delete.png)
-![Readme_Banner1](./src/assets/readme/Screenshot_3.png)
-
 ### Installation 💻
 
 1. Clone the repository
@@ -14,7 +7,17 @@
 
 3. Write this commands
 
-With yarn
+With npm
+
+```bash
+> npm install
+```
+
+```bash
+> npm run dev
+```
+
+or yarn
 
 ```bash
 > yarn
@@ -23,16 +26,11 @@ With yarn
 ```bash
 > yarn dev
 ```
+## Screenshots
 
-or npm
-
-```bash
-> npm i
-```
-
-```bash
-> npm run dev
-```
+![Readme_Banner1](./src/assets/Screenshot_4.png)
+![Readme_Banner1](./src/assets/Screenshot_delete.png)
+![Readme_Banner1](./src/assets/readme/Screenshot_3.png)
 
 ### Tech 🚀🚀
 

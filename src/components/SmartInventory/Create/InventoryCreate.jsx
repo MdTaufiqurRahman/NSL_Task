@@ -27,7 +27,6 @@ export default function InventoryCreate({
   const [checked, setChecked] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
-  const [imageError, setImageError] = useState(false);
   const [purchaseDate, setPurchaseDate] = useState({
     day: moment()?.format("D"),
     month: moment()?.format("M"),
@@ -103,7 +102,7 @@ export default function InventoryCreate({
       errors.warranty = "Warranty is required";
     }
     if (!selectedImage) {
-      setImageError(true);
+      errors.selectedImage = "Please select an image";
     }
     setErrors(errors);
     return Object.keys(errors)?.length === 0;
@@ -712,8 +711,10 @@ export default function InventoryCreate({
                       />
                     </p>
                   )}
-                  {imageError && (
-                    <p className="text-red-500 mt-1">Please select an image.</p>
+                  {errors.selectedImage && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.selectedImage}
+                    </p>
                   )}
                 </div>
               </div>
