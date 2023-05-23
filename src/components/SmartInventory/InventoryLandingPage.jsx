@@ -135,7 +135,7 @@ export default function InventoryLandingPage() {
               <img
                 src={SearchIcon}
                 alt="Search Icon"
-                className="absolute right-3 top-2.5 h-6 w-6 cursor-pointer"
+                className="absolute right-[14px] top-[13px] h-[17px] w-[17px] cursor-pointer"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function InventoryLandingPage() {
                         <td className="px-5 py-[15px] text-[14px] font-normal text-center text-[#333333]">
                           {item.productPhoto ? (
                             <img
-                              className="w-[29px] h-[29px] rounded-full text-center"
+                              className="w-[29px] h-[29px] m-[auto] rounded-full text-center"
                               src={BaseAPIUrl + item?.productPhoto?.v50x50Path}
                               alt="Product Photo"
                             />
@@ -202,9 +202,9 @@ export default function InventoryLandingPage() {
                           {moment(item?.purchaseDate)?.format("DD MMM,YYYY")}
                         </td>
                         <td className="px-5 py-[15px] text-[14px] font-normal">
-                          <div className="flex justify-center">
+                          <div className="flex justify-center items-center">
                             <img
-                              className="icon-image cursor-pointer mr-2 p-[5px] w-[22px] bg-[#F6E7EA]"
+                              className="icon-image cursor-pointer mr-[7px] p-[5px] w-[22px] h-[22px] bg-[#F6E7EA]"
                               src={EditIcon}
                               alt=""
                               onClick={() => {
